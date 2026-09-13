@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <title>NeuronForge — GenAI Operations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="NeuronForge home">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span>neuron<span>forge</span></span>
+        </a>
+        <button class="new-button" id="newChat"><span>＋</span> New workspace</button>
+        <nav aria-label="Main navigation">
+          <p class="nav-label">Build</p>
+          <a class="active" href="#copilot"><span>✦</span> AI Copilot</a>
+          <a href="#knowledge"><span>⌘</span> Knowledge Hub <b>12</b></a>
+          <a href="#workflows"><span>◈</span> Agent Workflows</a>
+          <p class="nav-label">Operate</p>
+          <a href="#evaluations"><span>◒</span> Evaluations</a>
+          <a href="#observability"><span>⌁</span> Observability</a>
+          <a href="#guardrails"><span>◉</span> Guardrails</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="usage"><div class="usage-top"><span>Team plan</span><span>74%</span></div><div class="usage-bar"><i></i></div><small>18.5M / 25M tokens</small></div>
+          <button class="profile"><span class="avatar">JH</span><span><strong>Jha42</strong><small>Product team</small></span><em>⌄</em></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div class="crumb"><span>Workspaces</span><b>/</b><strong>Product intelligence</strong><button>⌄</button></div>
+          <div class="top-actions"><button class="icon-button" title="Notifications">♧<i></i></button><button class="help-button">?</button><button class="share-button">Share <span>↗</span></button></div>
+        </header>
+
+        <section class="workspace" id="copilot">
+          <div class="hero">
+            <div><p class="eyebrow"><span></span> MULTI-MODEL PRODUCT INTELLIGENCE</p><h1>What are we<br /><em>building today?</em></h1><p class="subhead">Turn scattered customer signals into reliable decisions with your private AI team.</p></div>
+            <div class="health-card"><div class="health-head"><span class="pulse"></span> SYSTEM HEALTH <b>All systems nominal</b></div><div class="health-stats"><span><strong>99.98%</strong><small>availability</small></span><span><strong>1.2s</strong><small>avg. latency</small></span><span><strong>94.6%</strong><small>grounded</small></span></div></div>
+          </div>
+
+          <div class="suggestions">
+            <button data-prompt="Summarize the top customer pain points from this week."><span class="suggestion-icon purple">◌</span><span><strong>Find customer signals</strong><small>Ask across calls, tickets & research</small></span><b>→</b></button>
+            <button data-prompt="Draft a detailed PRD for improving the trial conversion experience."><span class="suggestion-icon orange">✎</span><span><strong>Draft a product brief</strong><small>Create a research-backed first draft</small></span><b>→</b></button>
+            <button data-prompt="Show the current experiment performance and recommend a next action."><span class="suggestion-icon blue">⌁</span><span><strong>Explore live data</strong><small>Query metrics with plain language</small></span><b>→</b></button>
+          </div>
+
+          <div class="conversation" id="conversation">
+            <div class="welcome-message"><span class="spark">✦</span><div><strong>Your product context is ready.</strong><p>Searches are grounded in 2,847 connected documents. Sensitive information stays inside your workspace.</p></div></div>
+          </div>
+
+          <div class="composer-wrap">
+            <div class="composer" id="composer"><textarea id="prompt" rows="1" placeholder="Ask anything about your product, customers, or metrics…"></textarea><div class="composer-actions"><div><button class="attach" title="Attach context">＋</button><button class="mode-button" id="modeButton"><span>✦</span> Deep research <b>⌄</b></button></div><button class="send" id="sendButton" title="Send message">↑</button></div></div>
+            <p class="disclaimer"><span>◉</span> Responses are grounded in your approved knowledge sources and reviewed against policy.</p>
+          </div>
+        </section>
+
+        <section class="side-panel">
+          <div class="panel-heading"><span>LIVE OPERATIONS</span><button>View all ↗</button></div>
+          <article class="run-card"><div class="run-title"><span class="run-icon">◈</span><div><strong>Weekly insight digest</strong><small>Research Agent · running now</small></div><span class="status live">LIVE</span></div><div class="run-progress"><i></i></div><div class="run-foot"><span>Analyzing 248 new signals</span><span>62%</span></div></article>
+          <article class="run-card"><div class="run-title"><span class="run-icon yellow">⌘</span><div><strong>Knowledge sync</strong><small>Notion, Intercom & Linear</small></div><span class="status synced">SYNCED</span></div><div class="run-progress synced-bar"><i></i></div><div class="run-foot"><span>Last updated 4 min ago</span><span>2,847 docs</span></div></article>
+          <div class="panel-heading second"><span>TRUST CENTER</span><button>Manage ↗</button></div>
+          <div class="trust-grid"><div><span class="trust-icon">◉</span><strong>PII protected</strong><small>12 items masked today</small></div><div><span class="trust-icon green">✓</span><strong>Policy checks</strong><small>100% passed this week</small></div></div>
+          <div class="panel-heading second"><span>MODEL MIX</span><button>Optimize ↗</button></div>
+          <div class="models"><div><span class="model-dot violet"></span><strong>Claude 3.5 Sonnet</strong><small>64% · reasoning</small><b>↗ 4.2k</b></div><div><span class="model-dot blue"></span><strong>GPT-4o</strong><small>28% · synthesis</small><b>↗ 1.8k</b></div><div><span class="model-dot lime"></span><strong>Embedding v3</strong><small>8% · retrieval</small><b>↗ 9.1k</b></div></div>
+        </section>
+      </main>
+    </div>
+    <div class="toast" id="toast">Workspace cleared. Ready for your next question.</div>
+    <script src="app.js"></script>
+  </body>
+</html>
